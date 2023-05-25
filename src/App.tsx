@@ -10,6 +10,7 @@ import {
   eastern,
   northeast,
   south,
+  western,
   region,
 } from "./region/sector";
 // import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -85,7 +86,7 @@ export default function App() {
   const [state, setState] = useState<any>(region);
   useEffect(() => {
     setState(region);
-    console.log(region)
+    console.log(region);
   }, [region]);
   const handleClick = (data: any) => {
     switch (data) {
@@ -109,6 +110,11 @@ export default function App() {
         return setState(result);
       }
 
+      case "western": {
+        const result = western;
+        return setState(result);
+      }
+
       case "south": {
         const result = south;
         return setState(result);
@@ -125,7 +131,7 @@ export default function App() {
   const mapOptions = {
     chart: {
       map: mapDataIE,
-      animation: false
+      animation: false,
     },
     title: {
       text: "Map Demo",
@@ -187,6 +193,9 @@ export default function App() {
       </Button>
       <Button variant="contained" onClick={() => handleClick("northeast")}>
         Northeast
+      </Button>
+      <Button variant="contained" onClick={() => handleClick("western")}>
+        Western
       </Button>
       <Button variant="contained" onClick={() => handleClick("south")}>
         South

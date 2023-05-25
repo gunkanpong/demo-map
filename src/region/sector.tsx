@@ -181,6 +181,14 @@ export const eastern = [
   ["th-pb", 82],
 ];
 
+export const western = [
+  ["th-pe", 35],
+  ["th-kn", 61],
+  ["th-tk", 62],
+  ["th-pk", 65],
+  ["th-rt", 83],
+];
+
 export const region = [
   ["th-ct", 10],
   ["th-4255", 11],
